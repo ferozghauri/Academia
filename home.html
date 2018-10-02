@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Academia</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<style>
+    .heading{
+        padding: 10px;
+        text-align: left;
+        color: white;
+    }
+    .head{
+        background-color: darkcyan;
+        margin-bottom: 20px;
+    }
+    .dropdown{
+        margin-left: 30px;
+    }
+    .select{
+        text-align: center;
+    }
+    nav ul{height:400px; width:100%;}
+    nav ul{overflow:hidden; overflow-y:scroll;}
+    ul{ list-style-type: none; }
+    .institutebox{
+        margin-bottom: 10px;
+    }
+</style>
+<body>
+    <div class="container-fluid head">
+      <h2 class="heading">Academia</h2>
+      </div>
+          <div class="container">
+              <div class="row select">
+                  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> <h5>I am looking for</h5></div>
+                  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+                   <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><select class="selectpicker" name="aa" onchange="report(this.value)"> 
+                        <option value="">Please select</option>
+                        <option value="daily">daily</option>
+                        <option value="monthly">monthly</option>
+                </select></div>
+                    
+              </div>
+          </div><hr><br>
+          
+          <div class="container">
+                   
+              <div class="row">
+                  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <nav id='schools'>
+                            <ul id="sch">
+                                <li><div id="s1" class="institutebox"><div class="row"><h4>My School name</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
+                                <li><div id="s2" class="institutebox"><div class="row"><h4>My School name</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
+                            </ul>
+                        </nav>
+                        <nav id='college' style="display: none;">
+                                <ul>
+                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
+                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
+                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
+                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
+                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
+                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
+                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
+                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
+                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
+                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
+                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
+                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
+                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
+                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
+                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
+                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
+                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
+                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
+                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
+                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
+                                </ul>
+                            </nav> 
+                  </div>
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=11IRxJ5O66bQmUXIRGqdQGIj-GqNMxTke" width="100%" height="400"></iframe>
+                            </div>
+                      
+              </div>
+              <div id="merabhai" style="background-color: blue">
+                  Hello
+              </div>
+              
+          </div>
+</body>
+<script>
+
+function report(period) {
+  if (period==""){
+      document.getElementById("merabhai").style.backgroundColor = "red";
+  }else if (period=="daily"){
+      alert("daily selected");
+      document.getElementById("merabhai").style.backgroundColor = "red";
+      document.getElementById("schools").style.display = "none";
+      document.getElementById("college").style.display = "block";
+  }
+} 
+  // locate your element and add the Click Event Listener
+  document.getElementById("sch").addEventListener("click",function(e) {
+        // e.target is our targetted element.
+                    // try doing console.log(e.target.nodeName), it will result LI
+        if(e.target && e.target.nodeName == "li") {
+            alert(e.target.id + " was clicked");
+        }
+    });
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+<!-- 
+<div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">HTML</a></li>
+      <li><a href="#">CSS</a></li>
+      <li><a href="#">JavaScript</a></li>
+    </ul>
+  </div> -->
