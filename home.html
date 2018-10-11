@@ -25,11 +25,26 @@
     .select{
         text-align: center;
     }
-    nav ul{height:400px; width:100%;}
-    nav ul{overflow:hidden; overflow-y:scroll;}
-    ul{ list-style-type: none; }
+    nav ul{
+        height:400px; width:100%;
+        }
+    nav ul{
+        overflow:hidden; overflow-y:scroll;
+        }
+    ul{ 
+        list-style-type: none; 
+        }
     .institutebox{
         margin-bottom: 10px;
+    }
+    li{
+        background-color: #ececec;
+    }
+    li:hover{
+        color: green;
+    }
+    li:active{
+        color: brown;
     }
 </style>
 <body>
@@ -55,42 +70,195 @@
                   <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                         <nav id='schools'>
                             <ul id="sch">
-                                <li><div id="s1" class="institutebox"><div class="row"><h4>My School name</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
-                                <li><div id="s2" class="institutebox"><div class="row"><h4>My School name</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
+                                <li id="s1" onclick="myfunc(this.id)">
+                                    <div class="institutebox">
+                                        <div class="row">
+                                            <h4>My School name</h4>
+                                        </div>
+                                        <div class="row">
+                                            <h6>My School Address</h6>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!--########-->
+                                <li id="s2" onclick="myfunc(this.id)">
+                                    <div class="institutebox">
+                                        <div class="row">
+                                            <h4>My School name</h4>
+                                        </div>
+                                        <div class="row">
+                                            <h6>My School Address</h6>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!--########-->
+                                <li id="s3" onclick="myfunc(this.id)">
+                                        <div class="institutebox">
+                                            <div class="row">
+                                                <h4>My School name</h4>
+                                            </div>
+                                            <div class="row">
+                                                <h6>My School Address</h6>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!--########-->
+                                    <li id="s4" onclick="myfunc(this.id)">
+                                        <div class="institutebox">
+                                            <div class="row">
+                                                <h4>My School name</h4>
+                                            </div>
+                                            <div class="row">
+                                                <h6>My School Address</h6>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!--########-->
+                                    <li id="s5" onclick="myfunc(this.id)">
+                                            <div class="institutebox">
+                                                <div class="row">
+                                                    <h4>My School name</h4>
+                                                </div>
+                                                <div class="row">
+                                                    <h6>My School Address</h6>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!--########-->
+                                        <li id="s6" onclick="myfunc(this.id)">
+                                            <div class="institutebox">
+                                                <div class="row">
+                                                    <h4>My School name</h4>
+                                                </div>
+                                                <div class="row">
+                                                    <h6>My School Address</h6>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!--########-->
+                                        <li id="s7" onclick="myfunc(this.id)">
+                                                <div class="institutebox">
+                                                    <div class="row">
+                                                        <h4>My School name</h4>
+                                                    </div>
+                                                    <div class="row">
+                                                        <h6>My School Address</h6>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <!--########-->
+                                            <li id="s8" onclick="myfunc(this.id)">
+                                                <div class="institutebox">
+                                                    <div class="row">
+                                                        <h4>My School name</h4>
+                                                    </div>
+                                                    <div class="row">
+                                                        <h6>My School Address</h6>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <!--########-->                           
                             </ul>
                         </nav>
-                        <nav id='college' style="display: none;">
-                                <ul>
-                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
-                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
-                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
-                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
-                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
-                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
-                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
-                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
-                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
-                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
-                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
-                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
-                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
-                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
-                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
-                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
-                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
-                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
-                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
-                                    <li><div class="institutebox"><div class="row"><h4>My College</h4></div><div class="row"><h6>My School Address</h6></div></div></li>
-                                </ul>
-                            </nav> 
+                        <nav id='college' style="display:none;">
+                            <ul id="clg">
+                                <li id="c1" onclick="myfunc(this.id)">
+                                    <div class="institutebox">
+                                        <div class="row">
+                                            <h4>My School name</h4>
+                                        </div>
+                                        <div class="row">
+                                            <h6>My School Address</h6>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!--########-->
+                                <li id="c2" onclick="myfunc(this.id)">
+                                    <div class="institutebox">
+                                        <div class="row">
+                                            <h4>My School name</h4>
+                                        </div>
+                                        <div class="row">
+                                            <h6>My School Address</h6>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!--########-->
+                                <li id="c3" onclick="myfunc(this.id)">
+                                        <div class="institutebox">
+                                            <div class="row">
+                                                <h4>My School name</h4>
+                                            </div>
+                                            <div class="row">
+                                                <h6>My School Address</h6>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!--########-->
+                                    <li id="c4" onclick="myfunc(this.id)">
+                                        <div class="institutebox">
+                                            <div class="row">
+                                                <h4>My School name</h4>
+                                            </div>
+                                            <div class="row">
+                                                <h6>My School Address</h6>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!--########-->
+                                    <li id="c5" onclick="myfunc(this.id)">
+                                            <div class="institutebox">
+                                                <div class="row">
+                                                    <h4>My School name</h4>
+                                                </div>
+                                                <div class="row">
+                                                    <h6>My School Address</h6>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!--########-->
+                                        <li id="c6" onclick="myfunc(this.id)">
+                                            <div class="institutebox">
+                                                <div class="row">
+                                                    <h4>My School name</h4>
+                                                </div>
+                                                <div class="row">
+                                                    <h6>My School Address</h6>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!--########-->
+                                        <li id="c7" onclick="myfunc(this.id)">
+                                                <div class="institutebox">
+                                                    <div class="row">
+                                                        <h4>My School name</h4>
+                                                    </div>
+                                                    <div class="row">
+                                                        <h6>My School Address</h6>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <!--########-->
+                                            <li id="c8" onclick="myfunc(this.id)">
+                                                <div class="institutebox">
+                                                    <div class="row">
+                                                        <h4>My School name</h4>
+                                                    </div>
+                                                    <div class="row">
+                                                        <h6>My School Address</h6>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <!--########-->                           
+                            </ul>
+                        </nav> 
                   </div>
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=11IRxJ5O66bQmUXIRGqdQGIj-GqNMxTke" width="100%" height="400"></iframe>
-                            </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" width="100%" height="400" id="map">
+                </div>
                       
               </div>
-              <div id="merabhai" style="background-color: blue">
-                  Hello
+              <div id="merabhai" style="display: none">
+                  <h1 id="sn"></h1>
               </div>
               
           </div>
@@ -107,14 +275,39 @@ function report(period) {
       document.getElementById("college").style.display = "block";
   }
 } 
-  // locate your element and add the Click Event Listener
-  document.getElementById("sch").addEventListener("click",function(e) {
-        // e.target is our targetted element.
-                    // try doing console.log(e.target.nodeName), it will result LI
-        if(e.target && e.target.nodeName == "li") {
-            alert(e.target.id + " was clicked");
-        }
-    });
+function myfunc(idd) {
+ alert(idd+" clicked");
+ document.getElementById("merabhai").style.display = "block";
+ document.getElementById("sn").innerHTML = idd;
+} 
+  
+
+
+function initMap() {
+        var mapDiv = document.getElementById('map');
+        var map = new google.maps.Map(mapDiv, {
+          zoom: 8,
+          center: new google.maps.LatLng(-34.397, 150.644)
+        });
+        
+var myLatlng = {lat: -25.363, lng: 131.044};
+var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          title: 'Click to zoom'
+        });
+        // We add a DOM event here to show an alert if the DIV containing the
+        // map is clicked.
+        google.maps.event.addDomListener(s1, 'click', function() {
+          window.alert('Map was clicked!');
+          map.setCenter(marker.getPosition());
+        });
+      }
+
+
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiJiiv62UTrYJBaiu3E6BPUAhAy_PSxK0&callback=initMap">
 </script>
 </html>
 
@@ -122,7 +315,7 @@ function report(period) {
 
 
 
-
+<!--google map APi key = AIzaSyCiJiiv62UTrYJBaiu3E6BPUAhAy_PSxK0-->
 
 
 
