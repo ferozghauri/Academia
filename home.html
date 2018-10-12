@@ -69,96 +69,7 @@
               <div class="row">
                   <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                         <nav id='schools'>
-                            <ul id="sch">
-                                <li id="s1" onclick="myfunc(this.id)">
-                                    <div class="institutebox">
-                                        <div class="row">
-                                            <h4>Karachi Public School</h4>
-                                        </div>
-                                        <div class="row">
-                                            <h6>My School Address</h6>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!--########-->
-                                <li id="s2" onclick="myfunc(this.id)">
-                                    <div class="institutebox">
-                                        <div class="row">
-                                            <h4>My School name</h4>
-                                        </div>
-                                        <div class="row">
-                                            <h6>My School Address</h6>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!--########-->
-                                <li id="s3" onclick="myfunc(this.id)">
-                                        <div class="institutebox">
-                                            <div class="row">
-                                                <h4>My School name</h4>
-                                            </div>
-                                            <div class="row">
-                                                <h6>My School Address</h6>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <!--########-->
-                                    <li id="s4" onclick="myfunc(this.id)">
-                                        <div class="institutebox">
-                                            <div class="row">
-                                                <h4>My School name</h4>
-                                            </div>
-                                            <div class="row">
-                                                <h6>My School Address</h6>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <!--########-->
-                                    <li id="s5" onclick="myfunc(this.id)">
-                                            <div class="institutebox">
-                                                <div class="row">
-                                                    <h4>My School name</h4>
-                                                </div>
-                                                <div class="row">
-                                                    <h6>My School Address</h6>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <!--########-->
-                                        <li id="s6" onclick="myfunc(this.id)">
-                                            <div class="institutebox">
-                                                <div class="row">
-                                                    <h4>My School name</h4>
-                                                </div>
-                                                <div class="row">
-                                                    <h6>My School Address</h6>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <!--########-->
-                                        <li id="s7" onclick="myfunc(this.id)">
-                                                <div class="institutebox">
-                                                    <div class="row">
-                                                        <h4>My School name</h4>
-                                                    </div>
-                                                    <div class="row">
-                                                        <h6>My School Address</h6>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <!--########-->
-                                            <li id="s8" onclick="myfunc(this.id)">
-                                                <div class="institutebox">
-                                                    <div class="row">
-                                                        <h4>My School name</h4>
-                                                    </div>
-                                                    <div class="row">
-                                                        <h6>My School Address</h6>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <!--########-->                           
-                            </ul>
+                           
                         </nav>
                         <nav id='college' style="display:none;">
                             <ul id="clg">
@@ -300,14 +211,124 @@ var marker = new google.maps.Marker({
         // map is clicked.
         google.maps.event.addDomListener(s1, 'click', function() {
           window.alert('Map was clicked!');
+          loaddetails();
           map.setCenter(marker.getPosition());
         });
       }
 
-
+function loaddetails(){
+            var output=" ";
+           
+            
+            $.getJSON("emp.json",function(response){
+              $.each(response.Employees,function(k,v){
+                   console.log(this);
+                   output+="<tr>"
+                   output+="<td>"+ v.userId +"</td><td>"+ v.jobTitleName+"</td><td>"+ v.region +"</td>"
+                   output+="</tr>";
+                });
+            });
+            output+="</table>"
+            document.getElementById('merabhai').innerHTML=output;
+        };
 </script>
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiJiiv62UTrYJBaiu3E6BPUAhAy_PSxK0&callback=initMap">
+
+
+
+
+var populate_schools = {"schools":[
+{"Name":"Karachi Public School",
+"Area":"Shahrah-e-Faisal Branch (25B)",
+"phone":"John",
+"Address":"Doe" }, 
+
+{"Name":"Karachi Public School",
+"Area":"PECHS Branch",
+"phone":"John",
+"Address":"Doe" }, 
+
+{"Name":"Karachi Public School",
+"Area":"Muslimabad Branch (70)",
+"phone":"John",
+"Address":"Doe" }, 
+
+{"Name":"Karachi Public School",
+"Area":"Air Port Branch (164 C)",
+"phone":"John",
+"Address":"Doe" }, 
+
+{"Name":"Karachi Public School",
+"Area":"Safavi Branch",
+"phone":"John",
+"Address":"Doe" }, 
+
+{"Name":"Karachi Public School",
+"Area":"Gulistan-e-Johar",
+"phone":"John",
+"Address":"Doe" }, 
+
+{"Name":"Karachi Public School",
+"Area":"Gulshan-e-Iqbal",
+"phone":"John",
+"Address":"Doe" }, 
+
+{"Name":"Karachi Public School",
+"Area":"Kashmir Road Campus",
+"phone":"John",
+"Address":"Doe" }, 
+
+{"Name":"Karachi Public School",
+"Area":"Kashmir Road Campus 2",
+"phone":"John",
+"Address":"Doe" }, 
+
+{"Name":"Karachi Public School",
+"Area":"Tariq Road Campus",
+"phone":"John",
+"Address":"Doe" },
+
+{"Name":"Karachi Public School",
+"Area":"Malir Campus",
+"phone":"John",
+"Address":"Doe" },
+
+{"Name":"Karachi Public School",
+"Area":"FB Area Campus",
+"phone":"John",
+"Address":"Doe" },
+
+{"Name":"Karachi Public School",
+"Area":"FB Area Campus 2",
+"phone":"John",
+"Address":"Doe"  
+}]};
+
+
+
+
+//var my = '<ul id="sch">';
+var my ='<ul id="sch">';
+for(var i=0;i<text.employees.length;i++){
+my+=`<li id="s${i+1}" onclick="myfunc(this.id)">
+    <div class="institutebox">
+        <div class="row">
+            <h4>${populate_schools.schools[i].Name}</h4>
+        </div>
+        <div class="row">
+            <h6>${populate_schools.schools[i].Area}</h6>
+        </div>
+    </div>
+</li>`
+}
+my += '</ul>';
+document.getElementById("schools").innerHTML =my;
+
+
+
+
+
 </script>
 </html>
 
