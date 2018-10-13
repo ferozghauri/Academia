@@ -1,0 +1,66 @@
+{"schools":[
+    {"Name":"Karachi Public School",
+    "Area":"Shahrah-e-Faisal Branch (25B)",
+    "phone":"John",
+    "Address":"Doe" }, 
+    
+    {"Name":"Karachi Public School",
+    "Area":"PECHS Branch",
+    "phone":"John",
+    "Address":"Doe" }, 
+    
+    {"Name":"Karachi Public School",
+    "Area":"Muslimabad Branch (70)",
+    "phone":"John",
+    "Address":"Doe" }, 
+    
+    {"Name":"Karachi Public School",
+    "Area":"Air Port Branch (164 C)",
+    "phone":"John",
+    "Address":"Doe" }, 
+    
+    {"Name":"Karachi Public School",
+    "Area":"Safavi Branch",
+    "phone":"John",
+    "Address":"Doe" }, 
+    
+    {"Name":"Karachi Public School",
+    "Area":"Gulistan-e-Johar",
+    "phone":"John",
+    "Address":"Doe" }, 
+    
+    {"Name":"Karachi Public School",
+    "Area":"Gulshan-e-Iqbal",
+    "phone":"John",
+    "Address":"Doe" }, 
+    
+    {"Name":"Karachi Public School",
+    "Area":"Kashmir Road Campus",
+    "phone":"John",
+    "Address":"Doe" }, 
+    
+    {"Name":"Karachi Public School",
+    "Area":"Kashmir Road Campus 2",
+    "phone":"John",
+    "Address":"Doe" }, 
+    
+    {"Name":"Karachi Public School",
+    "Area":"Tariq Road Campus",
+    "phone":"John",
+    "Address":"Doe" },
+    
+    {"Name":"Karachi Public School",
+    "Area":"Malir Campus",
+    "phone":"John",
+    "Address":"Doe" },
+    
+    {"Name":"Karachi Public School",
+    "Area":"FB Area Campus",
+    "phone":"John",
+    "Address":"Doe" },
+    
+    {"Name":"Karachi Public School",
+    "Area":"FB Area Campus 2",
+    "phone":"John",
+    "Address":"Doe"
+    }]}

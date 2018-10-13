@@ -5,7 +5,11 @@
 <h2>Create Object from JSON String</h2>
 
 <p id="demo"></p>
-
+<style>
+    #s0{
+        color: blue;
+    }
+</style>
 <script>
 var text = {"employees":[
 {"firstName":"John",
@@ -19,9 +23,9 @@ var text = {"employees":[
 
 
 //obj = JSON.parse(text);
-var my = '<ul>';
+var my = '<ul id="foo">';
 for(var i=0;i<text.employees.length;i++){
-my+=`<p>${text.employees[i].firstName} ${text.employees[i].lastName}</p>`
+my+=`<p id="s${i}">${text.employees[i].firstName} ${text.employees[i].lastName}</p>`
 }
 my += '</ul>';
 document.getElementById("demo").innerHTML =my;
