@@ -46,6 +46,14 @@
     li:active{
         color: brown;
     }
+    /* #logo{
+        text-align: left;
+        float: left;
+    }
+    #iname{
+        vertical-align: bottom;
+        background: blue;
+    } */
 </style>
 <body>
     <div class="container-fluid head">
@@ -75,112 +83,121 @@
                             
                         </nav>  -->
                   </div>
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" width="100%" height="400" id="map">
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" width="100%" height="400" id="map">
                 </div>
                       
               </div>
-              <div id="merabhai" style="background:red">
-                  <h1 id="sn"></h1>
-              </div>
-              
+                    
+          </div>
+          <br>
+          <div class="container">
+                <hr><br>
+                <div id="merabhai">
+                    <div class="row" id="inst_heading">
+                        
+                    </div>
+                    <br>
+                    <div id="campuses">
+                        
+                    </div>
           </div>
 </body>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiJiiv62UTrYJBaiu3E6BPUAhAy_PSxK0&callback=initMap"
     async defer></script>
 <script>
-
 var school_data = {"schools":[
-    {"Name":"Karachi Public School",
-    "Area":"Shahrah-e-Faisal Branch (25B)",
-    "phone":"John",
+    {
+    "Name":"Karachi Public School",
+    "logo":"data:image/jpeg;base64,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m+iyDMS4kx9Uwk6kgvytseS5Mx6reMlOOqG7LSxljt99XMGc+9fBmzlZM7MYJCSdXSaH2l+qbeht6EmCy5gJpIo7AAGSZjrAbgMhdYDuXLq6OG5c59S8EWDB1UHO73DrHewN8VsafYKrce11bBzcT8At3h3R7G2xnlL/AOFgyN/quSfgpKEn0iarm+kRCWpnrHNhjZ2W3LIIgAxnC9uPrON1NdldkBBaeezpN7W72s3a83fBSfDqFkTRHBGAO5o+JPEqQ4bs+5xDpTYcGq6NSW2aIUJPLOtg2HmZwcdGD4qZMYALBcYYgwWAsF9FcaAiIgCIiAIiIAiIgCwsogPnLA128XWvqMFjdyW0WCgI7Ns/3FabFtj2TA9ZE1/MgZv6hqp2hC40jjSfZ5+2i6OnxtL4CXAamN9r2/hdx8CtFDXR1Foq1zmPbcCpDSZW23skbvlGlhuc06XIJXpiela8WICqPpW2KsBWQMJNwHtaLl1yA02G830535KideNozWVY3Er2pqX1TmU1PGWxgjJE03JO7rJD9954uOg3C3GZ4DsNFHZ89pX+j/hj/wCR36nTlprtdldn20kQBAMrvLdqTfTsjkPjqVOcJwa/bfu7lKFf6yVdK7kaSjoDYNYwBvANAA+Gi78eCSnhbxKlkULWiwAC52VuEaMIjLNnH8XWXah2bjGriSt5ZZXQdenomRizWgLsIiAIiIAiIgCIiAIiIAiIgCIiALCyiAwgWUQBfOaMOBC+iICO4bghErnv1HAKQhZRAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQH/2Q==",    
     "Campuses":[{
-        "nname":"campus1",
-        "pposition":{
-            "long":" 67.07337",
-            "lat":"24.8623887"}},
-        {"nname":"campus2",
-        "pposition":{
-            "long":" 61.07337",
-            "lat":"24.8623887"}
-            }],
-    "Address":"Doe" }, 
-    
-    {"Name":"Karachi Public School",
-    "Area":"PECHS Branch",
-    "phone":"John",
-    "long":"45.25",
-    "lat":"32.25",
-    "Address":"Doe" }, 
-    
-    {"Name":"Karachi Public School",
-    "Area":"Muslimabad Branch (70)",
-    "phone":"John",
-    "long":"0",
-    "lat":"0",
-    "Address":"Doe" }, 
-    
-    {"Name":"Karachi Public School",
-    "Area":"Air Port Branch (164 C)",
-    "phone":"John",
-    "long":"",
-    "lat":"",
-    "Address":"Doe" }, 
-    
-    {"Name":"Karachi Public School",
-    "Area":"Safavi Branch",
-    "phone":"John",
-    "long":"",
-    "lat":"",
-    "Address":"Doe" }, 
-    
-    {"Name":"Karachi Public School",
-    "Area":"Gulistan-e-Johar",
-    "phone":"John",
-    "long":"",
-    "lat":"",
-    "Address":"Doe" }, 
-    
-    {"Name":"Karachi Public School",
-    "Area":"Gulshan-e-Iqbal",
-    "phone":"John",
-    "long":"",
-    "lat":"",
-    "Address":"Doe" }, 
-    
-    {"Name":"Karachi Public School",
-    "Area":"Kashmir Road Campus",
-    "phone":"John",
-    "long":"",
-    "lat":"",
-    "Address":"Doe" }, 
-    
-    {"Name":"Karachi Public School",
-    "Area":"Kashmir Road Campus 2",
-    "phone":"John",
-    "long":"",
-    "lat":"",
-    "Address":"Doe" }, 
-    
-    {"Name":"Karachi Public School",
-    "Area":"Tariq Road Campus",
-    "phone":"John",
-    "long":"",
-    "lat":"",
-    "Address":"Doe" },
-    
-    {"Name":"Karachi Public School",
-    "Area":"Malir Campus",
-    "phone":"John",
-    "long":"",
-    "lat":"",
-    "Address":"Doe" },
-    
-    {"Name":"Karachi Public School",
-    "Area":"FB Area Campus",
-    "phone":"John",
-    "long":"",
-    "lat":"",
-    "Address":"Doe" },
+                "C_name":"Shahrah-e-Faisal Branch (25B)",
+                "Address":"25-B,Block-6, PECHS, Karachi ",
+                "phone":"021-34528623, 021-34392591, 0317-2852508",
+                "Info":"Nursery to Class 4",
+                "C_position":{
+                    "lat":"24.861744",
+                    "long":" 67.071273"
+                    }
+                },
+
+                {
+                "C_name":"PECHS Branch",
+                "Address":" Plot D, Block-6, PECHS, ",
+                "phone":"021-34912281, 021-34912282, 021-34761666, 0317-2852513",
+                "Info":"Class 4 to Matric & Cambridge O’Levels",
+                "C_position":{
+                    "lat":"25.861744",
+                    "long":" 67.071273"
+                    }
+                },
+                {
+                "C_name":"Air Port Branch ",
+                "Address":"164-C, Stargate Shahra-e-Faisal, Karachi",
+                "phone":"021-34590504, 021-34592760, 021-34590304, 021-34582761, 0317-2852509",
+                "Info":"Nursery to Class 5 (O’Levels) Class 6 to 10 (Matric &O’Levels)",
+                "C_position":{
+                    "lat":"24.861744",
+                    "long":" 67.071273"
+                    }
+                },
+                {
+                "C_name":"Muslimabad Branch",
+                "Address":"70, Muslimabad ",
+                "phone":"021-34912281, 021-34912282, 021-34761666, 0317-2852513",
+                "Info":"Nursery to Class 3 (O’Levels)",
+                "C_position":{
+                    "lat":"24.861744",
+                    "long":" 67.071273"
+                    }
+                }
+                 ]
+    }, 
+    {
+    "Name":"BeaconHouse School System",
+    "logo":"https://seeklogo.com/images/B/beaconhouse-school-system-logo-B8DD760BF0-seeklogo.com.png",    
+    "Campuses":[{
+                "C_name":"Beaconhouse School System Primary III PECHS",
+                "Address":" 54/55, Darul-Aman Housing Sciety, PECHS, Karachi، Darul Aman Street 5, Darul Aman Society PECHS, Karachi.",
+                "phone":"(021) 34540323",
+                "Info":"",
+                "C_position":{
+                    "lat":"24.861744",
+                    "long":" 67.071273"
+                    }
+                },
+
+                {
+                "C_name":"Beaconhouse School System PECHS Campus",
+                "Address":"A-35 P/1, Block 6, PECHS، Imam Ahmed Rd, Block 6 PECHS, Karachi",
+                "phone":"(021) 34555882",
+                "Info":"",
+                "C_position":{
+                    "lat":"25.861744",
+                    "long":" 67.071273"
+                    }
+                },
+                {
+                "C_name":"Beaconhouse School System Clifton Campus",
+                "Address":"McNeil Rd, Frere Town, Karachi, Karachi City, Sindh",
+                "phone":"021 34819747",
+                "Info":"",
+                "C_position":{
+                    "lat":"24.861744",
+                    "long":" 67.071273"
+                    }
+                },
+                {
+                "C_name":"Beaconhouse School System Gulshan Cambridge",
+                "Address":"Block 10 Gulshan-e-Iqbal, Karachi, Karachi City, Sindh",
+                "phone":"021-34912281, 021-34912282, 021-34761666, 0317-2852513",
+                "Info":"",
+                "C_position":{
+                    "lat":"24.861744",
+                    "long":" 67.071273"
+                    }
+                }
+                 ]
+    },
     
     {"Name":"Karachi Public School",
     "Area":"FB Area Campus 2",
@@ -191,127 +208,89 @@ var school_data = {"schools":[
     }]};
 
 var college_data = {"colleges":[
-    {"Name":"Adamjee Govt. Science College",
-    "Area":"Shahrah-e-Faisal Branch (25B)",
-    "phone":"John",
-    "long":"",
-    "lat":"",
-    "Address":"Doe" }, 
-    
-    {"Name":"Bahria College Karsaz ",
-    "Area":"Shahrah-e-Faisal Branch (25B)",
-    "phone":"John",
-    "long":"",
-    "lat":"",
-    "Address":"Doe" }, 
-    
-    {"Name":"Bahria College",
-    "Area":"Shahrah-e-Faisal Branch (25B)",
-    "phone":"John",
-    "long":"",
-    "lat":"",
-    "Address":"Doe" }, 
-    
-    {"Name":"St. Lawrence Government Girls Degree College",
-    "Area":"Shahrah-e-Faisal Branch (25B)",
-    "phone":"John",
-    "long":"",
-    "lat":"",
-    "Address":"Doe" }, 
-    
-    {"Name":"Govt Degree College Stadium Road",
-    "Area":"Shahrah-e-Faisal Branch (25B)",
-    "phone":"John",
-    "long":"",
-    "lat":"",
-    "Address":"Doe" }, 
-    
-    {"Name":"Abdullah Govt College for Women",
-    "Area":"Shahrah-e-Faisal Branch (25B)",
-    "phone":"John",
-    "long":"",
-    "lat":"",
-    "Address":"Doe" }, 
-    
-    {"Name":"PECHS Govt. College for Women",
-    "Area":"Shahrah-e-Faisal Branch (25B)",
-    "phone":"John",
-    "long":"",
-    "lat":"",
-    "Address":"Doe" }, 
-    
-    {"Name":"Delhi Govt. College ",
-    "Area":"Shahrah-e-Faisal Branch (25B)",
-    "phone":"John",
-    "long":"",
-    "lat":"",
-    "Address":"Doe" }, 
-    
-    {"Name":"Aga Khan Higher Secondary School ",
-    "Area":"Shahrah-e-Faisal Branch (25B)",
-    "phone":"John",
-    "long":"",
-    "lat":"",
-    "Address":"Doe" }, 
-    
-    {"Name":"Commecs College ",
-    "Area":"Shahrah-e-Faisal Branch (25B)",
-    "phone":"John",
-    "long":"",
-    "lat":"",
-    "Address":"Doe" }, 
-    
-    {"Name":"NCR- CET (College of Emerging Technologies",
-    "Area":"Shahrah-e-Faisal Branch (25B)",
-    "phone":"John",
-    "long":"",
-    "lat":"",
-    "Address":"Doe" }, 
-    
-    {"Name":"DA Degree College for Women ",
-    "Area":"Shahrah-e-Faisal Branch (25B)",
-    "phone":"John",
-    "long":"",
-    "lat":"",
-    "Address":"Doe" }, 
-    
-    {"Name":"KMA Girls Degree ",
-    "Area":"FB Area Campus 2",
-    "phone":"John",
-    "long":"",
-    "lat":"",
-    "Address":"Doe"
-    }]};
+    {
+    "Name":"Adamjee Govt. Science",
+    "logo":"",    
+    "Campuses":[{
+                "C_name":"",
+                "Address":"Soldier Bazaar Garden East, Karachi, Karachi City, Sindh",
+                "phone":"0322 2146953",
+                "Info":"",
+                "C_position":{
+                    "lat":"24.861744",
+                    "long":" 67.071273"
+                    }
+                }]
+    }, 
+    {
+    "Name":"Bahria College",
+    "logo":"https://upload.wikimedia.org/wikipedia/en/thumb/e/e0/BCK_NORE_1_LOGO.jpg/220px-BCK_NORE_1_LOGO.jpg",    
+    "Campuses":[{
+                "C_name":"Karsaz Campus",
+                "Address":"Habib Rehmatullah Road, Karsaz، Karsaz Faisal Cantonment, Karachi, Karachi City, Sindh, Pakistan",
+                "phone":"92 21 48503174",
+                "Info":"",
+                "C_position":{
+                    "lat":"24.861744",
+                    "long":" 67.071273"
+                    }
+                },
+                {
+                "C_name":"N.O.R.E-1 Campus",
+                "Address":"Moulvi Tamizuddin Khan Rd, Naval Officers Residential Estate 1 Naval Officers Colony, Karachi, ",
+                "phone":"+92 21 48500701",
+                "Info":"",
+                "C_position":{
+                    "lat":"24.861744",
+                    "long":" 67.071273"
+                    }
+                }
+            ]
+    }
+    ]};
 
 var university_data = {"universities":[
-    {"Name":"Karachi Institute of Economics and Technology",
-    "Area":"Shahrah-e-Faisal Branch (25B)",
-    "phone":"John",
-    "long":"",
-    "lat":"",
-    "Address":"Doe" }, 
-    
-    {"Name":"Iqra University Airport Campus",
-    "Area":"Shahrah-e-Faisal Branch (25B)",
-    "phone":"John",
-    "long":"",
-    "lat":"",
-    "Address":"Doe" }, 
-    
-    {"Name":"Iqra University EDC Campus",
-    "Area":"Shahrah-e-Faisal Branch (25B)",
-    "phone":"John",
-    "long":"",
-    "lat":"",
-    "Address":"Doe" }, 
-    
-    {"Name":"KMA Girls Degree ",
-    "Area":"FB Area Campus 2",
-    "phone":"John",
-    "long":"",
-    "lat":"",
-    "Address":"Doe"
-    }]};
+    {
+    "Name":"Karachi Institute of Economics and Technology",
+    "logo":"",    
+    "Campuses":[{
+                "C_name":"Main Campus",
+                "Address":"PAF Base Korangi Creek، Paf Colony Korangi Creek, Karachi, Karachi City, Sindh 75190",
+                "phone":"N/A",
+                "Info":"",
+                "C_position":{
+                    "lat":"24.861744",
+                    "long":" 67.071273"
+                    }
+                }]
+    }, 
+    {
+    "Name":"Iqra University",
+    "logo":"https://upload.wikimedia.org/wikipedia/en/thumb/e/e0/BCK_NORE_1_LOGO.jpg/220px-BCK_NORE_1_LOGO.jpg",    
+    "Campuses":[{
+                "C_name":"Airport Campus",
+                "Address":"Main Shahra e Faisal, Faisal Cantonment, Karachi, Karachi City, Sindh",
+                "phone":"92 21 48503174",
+                "Info":"",
+                "C_position":{
+                    "lat":"24.861744",
+                    "long":" 67.071273"
+                    }
+                },
+                {
+                "C_name":"N.O.R.E-1 Campus",
+                "Address":"Moulvi Tamizuddin Khan Rd, Naval Officers Residential Estate 1 Naval Officers Colony, Karachi, ",
+                "phone":"+92 21 48500701",
+                "Info":"",
+                "C_position":{
+                    "lat":"24.861744",
+                    "long":" 67.071273"
+                    }
+                }
+            ]
+    }
+    ]};
+
 
 window.onload = function() {
  loadSchools(school_data);
@@ -335,45 +314,172 @@ function selectInst(period) {
 
 
 
-function call_schools(idd) {
- alert(idd+" clicked");
- document.getElementById("merabhai").style.display = "block";
- var camp="";
- gMap = new google.maps.Map(document.getElementById('map')); 
+function call_colleges(idd) {
+        //alert(idd+" clicked");
+        var camp="";
+        gMap = new google.maps.Map(document.getElementById('map')); 
 
- for(var i=0;i<school_data.schools[idd].Campuses.length;i++){
-        camp+=`<p>${school_data.schools[idd].Campuses[i].nname}</p>`;
+        document.getElementById("inst_heading").innerHTML="";
+        document.getElementById("campuses").innerHTML="";
+        document.getElementById("inst_heading").innerHTML=`
+        <div class="justify-content-end" id="logo">                       
+            <img height="100px" class="float-left" src="${college_data.colleges[idd].logo}"/>
+        </div>
+        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 align-self-center" id="iname">
+            <h1>${college_data.colleges[idd].Name}</h1>
+        </div>`;
+        for(var i=0;i<college_data.colleges[idd].Campuses.length;i++){
+                camp+=`<div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <h4>${college_data.colleges[idd].Campuses[i].C_name}</h4>
+                        </div>
+                        </div>
+                        <div class="row justify-content-start">
+                            <div  class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                <strong>Address</strong><p>${college_data.colleges[idd].Campuses[i].Address}</p>
+                            </div>
+                            <div  class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <strong>Phone</strong><p>${college_data.colleges[idd].Campuses[i].phone}</p>
+                            </div>
+                            <div  class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <strong>Info</strong><p>${college_data.colleges[idd].Campuses[i].Info}</p>
+                            </div>
+                        </div>
+                        <hr>`;
 
-        var latt =school_data.schools[idd].Campuses[i].pposition.lat;
-        var long =school_data.schools[idd].Campuses[i].pposition.long;
-        alert(latt+","+long);
-        createMarker(latt,long);
+                var latt =college_data.colleges[idd].Campuses[i].C_position.lat;
+                var long =college_data.colleges[idd].Campuses[i].C_position.long;
+                //alert(latt+","+long);
+                createMarker(latt,long);
 
-        function createMarker(latt,long) {
-                var marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(latt,long),
-                    map: gMap,
-                    title: "HI"
-                });
-                gMap.setZoom(18);      // This will trigger a zoom_changed on the map
-                gMap.setCenter(marker.getPosition());
-            };
-        // var marker = new google.maps.Marker({
-        //         position: new google.maps.LatLng(latt,long),
-        //         map: gMap,
-        //         title:'HI'
-        //         });
-}
-camp += '</ul>';
-document.getElementById("sn").innerHTML = camp;
-
-
-
-
-
+                function createMarker(latt,long) {
+                        var marker = new google.maps.Marker({
+                            position: new google.maps.LatLng(latt,long),
+                            map: gMap,
+                            title: "HI"
+                        });
+                        gMap.setZoom(18);      // This will trigger a zoom_changed on the map
+                        gMap.setCenter(marker.getPosition());
+                    };
+                // var marker = new google.maps.Marker({
+                //         position: new google.maps.LatLng(latt,long),
+                //         map: gMap,
+                //         title:'HI'
+                //         });
+        }
+        document.getElementById("campuses").innerHTML = camp;
 } 
   
+function call_schools(idd) {
+        //alert(idd+" clicked");
+        var camp="";
+        gMap = new google.maps.Map(document.getElementById('map')); 
 
+        document.getElementById("inst_heading").innerHTML="";
+        document.getElementById("campuses").innerHTML="";
+        document.getElementById("inst_heading").innerHTML=`
+        <div class="justify-content-end" id="logo">                       
+            <img height="100px" class="float-left" src="${school_data.schools[idd].logo}"/>
+        </div>
+        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 align-self-center" id="iname">
+            <h1>${school_data.schools[idd].Name}</h1>
+        </div>`;
+        for(var i=0;i<school_data.schools[idd].Campuses.length;i++){
+                camp+=`<div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <h4>${school_data.schools[idd].Campuses[i].C_name}</h4>
+                        </div>
+                        </div>
+                        <div class="row justify-content-start">
+                            <div  class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                <strong>Address</strong><p>${school_data.schools[idd].Campuses[i].Address}</p>
+                            </div>
+                            <div  class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <strong>Phone</strong><p>${school_data.schools[idd].Campuses[i].phone}</p>
+                            </div>
+                            <div  class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <strong>Info</strong><p>${school_data.schools[idd].Campuses[i].Info}</p>
+                            </div>
+                        </div>
+                        <hr>`;
+
+                var latt =school_data.schools[idd].Campuses[i].C_position.lat;
+                var long =school_data.schools[idd].Campuses[i].C_position.long;
+                //alert(latt+","+long);
+                createMarker(latt,long);
+
+                function createMarker(latt,long) {
+                        var marker = new google.maps.Marker({
+                            position: new google.maps.LatLng(latt,long),
+                            map: gMap,
+                            title: "HI"
+                        });
+                        gMap.setZoom(18);      // This will trigger a zoom_changed on the map
+                        gMap.setCenter(marker.getPosition());
+                    };
+                // var marker = new google.maps.Marker({
+                //         position: new google.maps.LatLng(latt,long),
+                //         map: gMap,
+                //         title:'HI'
+                //         });
+        }
+        document.getElementById("campuses").innerHTML = camp;
+} 
+function call_universities(idd) {
+        //alert(idd+" clicked");
+        var camp="";
+        gMap = new google.maps.Map(document.getElementById('map')); 
+
+        document.getElementById("inst_heading").innerHTML="";
+        document.getElementById("campuses").innerHTML="";
+        document.getElementById("inst_heading").innerHTML=`
+        <div class="justify-content-end" id="logo">                       
+            <img height="100px" class="float-left" src="${university_data.universities[idd].logo}"/>
+        </div>
+        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 align-self-center" id="iname">
+            <h1>${university_data.universities[idd].Name}</h1>
+        </div>`;
+        for(var i=0;i<university_data.universities[idd].Campuses.length;i++){
+                camp+=`<div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <h4>${university_data.universities[idd].Campuses[i].C_name}</h4>
+                        </div>
+                        </div>
+                        <div class="row justify-content-start">
+                            <div  class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                <strong>Address</strong><p>${university_data.universities[idd].Campuses[i].Address}</p>
+                            </div>
+                            <div  class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <strong>Phone</strong><p>${university_data.universities[idd].Campuses[i].phone}</p>
+                            </div>
+                            <div  class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <strong>Info</strong><p>${university_data.universities[idd].Campuses[i].Info}</p>
+                            </div>
+                        </div>
+                        <hr>`;
+
+                var latt =university_data.universities[idd].Campuses[i].C_position.lat;
+                var long =university_data.universities[idd].Campuses[i].C_position.long;
+                //alert(latt+","+long);
+                createMarker(latt,long);
+
+                function createMarker(latt,long) {
+                        var marker = new google.maps.Marker({
+                            position: new google.maps.LatLng(latt,long),
+                            map: gMap,
+                            title: "HI"
+                        });
+                        gMap.setZoom(18);      // This will trigger a zoom_changed on the map
+                        gMap.setCenter(marker.getPosition());
+                    };
+                // var marker = new google.maps.Marker({
+                //         position: new google.maps.LatLng(latt,long),
+                //         map: gMap,
+                //         title:'HI'
+                //         });
+        }
+        document.getElementById("campuses").innerHTML = camp;
+} 
 
 //--------------------------------------------------
 // var map;
@@ -441,9 +547,6 @@ my+=`<li id="${i}" onclick="call_schools(this.id)">
         <div class="row">
             <h5>${school_data.schools[i].Name}</h5>
         </div>
-        <div class="row">
-            <p>${school_data.schools[i].Area}</p>
-        </div>
     </div>
 </li>
 <hr/>`
@@ -454,13 +557,10 @@ document.getElementById("inst_list").innerHTML=my;
 function loadColleges(college_data) {
     var my ='<ul id="clg">';
 for(var i=0;i<college_data.colleges.length;i++){
-my+=`<li id="${i+1}" onclick="call_schools(this.id)">
+my+=`<li id="${i}" onclick="call_colleges(this.id)">
     <div class="institutebox">
         <div class="row">
             <h5>${college_data.colleges[i].Name}</h5>
-        </div>
-        <div class="row">
-            <h6>${college_data.colleges[i].Area}</h6>
         </div>
     </div>
 </li>
@@ -472,13 +572,10 @@ document.getElementById("inst_list").innerHTML=my;
 function loadUniversities(university_data) {
     var my ='<ul id="clg">';
 for(var i=0;i<university_data.universities.length;i++){
-my+=`<li id="${i+1}" onclick="call_schools(this.id)">
+my+=`<li id="${i}" onclick="call_schools(this.id)">
     <div class="institutebox">
         <div class="row">
             <h5>${university_data.universities[i].Name}</h5>
-        </div>
-        <div class="row">
-            <h6>${university_data.universities[i].Area}</h6>
         </div>
     </div>
 </li>
