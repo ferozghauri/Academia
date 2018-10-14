@@ -93,22 +93,30 @@ var school_data = {"schools":[
     {"Name":"Karachi Public School",
     "Area":"Shahrah-e-Faisal Branch (25B)",
     "phone":"John",
-    "long":"",
-    "lat":"",
+    "Campuses":[{
+        "nname":"campus1",
+        "pposition":{
+            "long":" 67.07337",
+            "lat":"24.8623887"}},
+        {"nname":"campus2",
+        "pposition":{
+            "long":" 61.07337",
+            "lat":"24.8623887"}
+            }],
     "Address":"Doe" }, 
     
     {"Name":"Karachi Public School",
     "Area":"PECHS Branch",
     "phone":"John",
-    "long":"",
-    "lat":"",
+    "long":"45.25",
+    "lat":"32.25",
     "Address":"Doe" }, 
     
     {"Name":"Karachi Public School",
     "Area":"Muslimabad Branch (70)",
     "phone":"John",
-    "long":"",
-    "lat":"",
+    "long":"0",
+    "lat":"0",
     "Address":"Doe" }, 
     
     {"Name":"Karachi Public School",
@@ -181,7 +189,6 @@ var school_data = {"schools":[
     "lat":"",
     "Address":"Doe"
     }]};
-
 
 var college_data = {"colleges":[
     {"Name":"Adamjee Govt. Science College",
@@ -328,24 +335,81 @@ function selectInst(period) {
 
 
 
-function myfunc(idd) {
+function call_schools(idd) {
  alert(idd+" clicked");
  document.getElementById("merabhai").style.display = "block";
- document.getElementById("sn").innerHTML = idd;
-
+ var camp="";
  gMap = new google.maps.Map(document.getElementById('map')); 
- var myLatlng = {lat: -24.8623887, lng: 67.073375};
-var marker = new google.maps.Marker({
-          position: myLatlng,
-          map: map
-        });
-gMap.setZoom(13);      // This will trigger a zoom_changed on the map
-gMap.setCenter(marker.getPosition());
+
+ for(var i=0;i<school_data.schools[idd].Campuses.length;i++){
+        camp+=`<p>${school_data.schools[idd].Campuses[i].nname}</p>`;
+
+        var latt =school_data.schools[idd].Campuses[i].pposition.lat;
+        var long =school_data.schools[idd].Campuses[i].pposition.long;
+        alert(latt+","+long);
+        createMarker(latt,long);
+
+        function createMarker(latt,long) {
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(latt,long),
+                    map: gMap,
+                    title: "HI"
+                });
+                gMap.setZoom(18);      // This will trigger a zoom_changed on the map
+                gMap.setCenter(marker.getPosition());
+            };
+        // var marker = new google.maps.Marker({
+        //         position: new google.maps.LatLng(latt,long),
+        //         map: gMap,
+        //         title:'HI'
+        //         });
+}
+camp += '</ul>';
+document.getElementById("sn").innerHTML = camp;
+
+
+
+
 
 } 
   
 
 
+//--------------------------------------------------
+// var map;
+// function initialize() {
+//     var mapProp = {
+//         center: new google.maps.LatLng(38, -78),
+//         zoom: 6,
+//         mapTypeId: google.maps.MapTypeId.ROADMAP
+//     };
+//     map = new google.maps.Map(document.getElementById('map'), mapProp);
+// };
+
+// $(document).ready(function () {
+//     var url = 'https://opendata.howardcountymd.gov/resource/96q9-qbh7.json';
+//     initialize();
+//     $.getJSON(url, function (data) {
+//         $.each(data, function (i, field) {
+//             $('#list').append("<li>" + data[i].location.longitude + " & " + data[i].location.latitude + "</li>");
+//             createMarker(data);
+
+//             function createMarker(data) {
+//                 var marker = new google.maps.Marker({
+//                     position: new google.maps.LatLng(data[i].location.latitude, data[i].location.longitude),
+//                     map: map,
+//                     title: field.crossroad
+//                 });
+//             };
+//         });
+//     });
+
+// });
+
+
+
+
+//----------------------------------------------------
 function initMap() {
         var mapDiv = document.getElementById('map');
         var map = new google.maps.Map(mapDiv, {
@@ -372,7 +436,7 @@ var marker2 = new google.maps.Marker({
 function loadSchools(school_data) {
     var my ='<ul id="sch">';
 for(var i=0;i<school_data.schools.length;i++){
-my+=`<li id="s${i+1}" onclick="myfunc(this.id)">
+my+=`<li id="${i}" onclick="call_schools(this.id)">
     <div class="institutebox">
         <div class="row">
             <h5>${school_data.schools[i].Name}</h5>
@@ -390,7 +454,7 @@ document.getElementById("inst_list").innerHTML=my;
 function loadColleges(college_data) {
     var my ='<ul id="clg">';
 for(var i=0;i<college_data.colleges.length;i++){
-my+=`<li id="c${i+1}" onclick="myfunc(this.id)">
+my+=`<li id="${i+1}" onclick="call_schools(this.id)">
     <div class="institutebox">
         <div class="row">
             <h5>${college_data.colleges[i].Name}</h5>
@@ -408,7 +472,7 @@ document.getElementById("inst_list").innerHTML=my;
 function loadUniversities(university_data) {
     var my ='<ul id="clg">';
 for(var i=0;i<university_data.universities.length;i++){
-my+=`<li id="c${i+1}" onclick="myfunc(this.id)">
+my+=`<li id="${i+1}" onclick="call_schools(this.id)">
     <div class="institutebox">
         <div class="row">
             <h5>${university_data.universities[i].Name}</h5>
@@ -425,7 +489,7 @@ document.getElementById("inst_list").innerHTML=my;
 }
 // var my ='<ul id="sch">';
 // for(var i=0;i<school_data.schools.length;i++){
-// my+=`<li id="s${i+1}" onclick="myfunc(this.id)">
+// my+=`<li id="s${i+1}" onclick="call_schools(this.id)">
 //     <div class="institutebox">
 //         <div class="row">
 //             <h4>${school_data.schools[i].Name}</h4>
@@ -445,7 +509,7 @@ document.getElementById("inst_list").innerHTML=my;
 
 // document.getElementById("sch").innerHTML = `
 //   ${Array(school_data.schools.length).join(0).split(0).map((item, i) => `
-//     <li id="s${i+1}" onclick="myfunc(this.id)">
+//     <li id="s${i+1}" onclick="call_schools(this.id)">
 //     <div class="institutebox">
 //         <div class="row">
 //             <h4>${school_data.schools[i].Name}</h4>
